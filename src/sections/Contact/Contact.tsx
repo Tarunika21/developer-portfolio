@@ -1,4 +1,4 @@
-import './Contact.css'
+import "./Contact.css";
 
 function Contact() {
   return (
@@ -14,11 +14,17 @@ function Contact() {
         </p>
 
         <div className="contact-actions">
-          <a
-            href="mailto:tarunikavinay@gmail.com"
-            className="contact-primary"
-          >
+          <a href="mailto:tarunikavinay@gmail.com" className="contact-primary">
             Send Email
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/tarunika-v-888503238"
+            target="_blank"
+            rel="noreferrer"
+            className="contact-secondary"
+          >
+            LinkedIn
           </a>
 
           <a
@@ -36,13 +42,11 @@ function Contact() {
         <div className="footer-container">
           <span>Tarunika V</span>
 
-          <p>
-            Built with React + TypeScript
-          </p>
+          <p>Built with React + TypeScript</p>
         </div>
       </footer>
     </section>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

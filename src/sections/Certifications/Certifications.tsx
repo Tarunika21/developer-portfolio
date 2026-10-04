@@ -5,16 +5,15 @@ const certifications = [
     title: 'Microsoft Certified: Azure Fundamentals',
     issuer: 'Microsoft',
     code: 'AZ-900',
+    credentialUrl:
+      'https://learn.microsoft.com/en-gb/users/tarunikav-4474/credentials/ee2a370dccd97be9',
   },
   {
     title: 'Generative AI: Introduction and Applications',
     issuer: 'IBM',
     code: 'Generative AI',
-  },
-  {
-    title: 'AWS Cloud Practitioner Essentials',
-    issuer: 'AWS',
-    code: 'Cloud',
+    credentialUrl:
+      'https://www.coursera.org/account/accomplishments/verify/M0WQ79HUSOXK',
   },
 ]
 
@@ -38,7 +37,18 @@ function Certifications() {
               </div>
 
               <h3>{certification.title}</h3>
+
               <p>{certification.issuer}</p>
+
+              <a
+                href={certification.credentialUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="credential-link"
+                aria-label={`View ${certification.title} credential`}
+              >
+                View Credential →
+              </a>
             </article>
           ))}
         </div>

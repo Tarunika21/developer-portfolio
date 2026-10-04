@@ -38,3 +38,26 @@ img {
   display: block;
   max-width: 100%;
 }
+
+section {
+  scroll-margin-top: 72px;
+}
+
+::selection {
+  background: #38bdf8;
+  color: #06111f;
+}
+
+section {
+  scroll-margin-top: 72px;
+}
+
+::selection {
+  background: #38bdf8;
+  color: #06111f;
+}
+
+:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 4px;
+}

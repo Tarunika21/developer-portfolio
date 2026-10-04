@@ -1,4 +1,4 @@
-import './Hero.css'
+import "./Hero.css";
 
 function Hero() {
   return (
@@ -7,9 +7,7 @@ function Hero() {
         <div className="hero-content">
           <p className="hero-eyebrow">HELLO, I'M</p>
 
-          <h1>
-            Tarunika V
-          </h1>
+          <h1>Tarunika V</h1>
 
           <h2>Full Stack Software Engineer</h2>
 
@@ -22,6 +20,15 @@ function Hero() {
           <div className="hero-actions">
             <a href="#projects" className="primary-button">
               View My Work
+            </a>
+
+            <a
+              href="/resume/Tarunika_V_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="secondary-button"
+            >
+              Resume
             </a>
 
             <a
@@ -54,8 +61,8 @@ function Hero() {
 
             <div className="code-content">
               <p>
-                <span className="code-purple">const</span>{' '}
-                <span className="code-blue">developer</span> = {'{'}
+                <span className="code-purple">const</span>{" "}
+                <span className="code-blue">developer</span> = {"{"}
               </p>
 
               <p className="code-indent">
@@ -63,7 +70,7 @@ function Hero() {
               </p>
 
               <p className="code-indent">
-                role:{' '}
+                role:{" "}
                 <span className="code-green">
                   'Full Stack Software Engineer'
                 </span>
@@ -74,7 +81,7 @@ function Hero() {
                 builds: <span className="code-green">'Scalable Products'</span>,
               </p>
 
-              <p>{'}'}</p>
+              <p>{"}"}</p>
             </div>
           </div>
 
@@ -84,7 +91,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
