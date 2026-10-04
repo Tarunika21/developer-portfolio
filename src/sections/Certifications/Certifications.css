@@ -1,0 +1,53 @@
+.certifications {
+  background: #0b1323;
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.certification-card {
+  padding: 28px;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  background: #0f1a2d;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+}
+
+.certification-code {
+  width: fit-content;
+  margin-bottom: 25px;
+  padding: 6px 9px;
+  border: 1px solid #164e63;
+  border-radius: 5px;
+  color: #38bdf8;
+  font-family: monospace;
+  font-size: 0.7rem;
+}
+
+.certification-card h3 {
+  color: #e2e8f0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.certification-card p {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 750px) {
+  .certification-grid {
+    grid-template-columns: 1fr;
+  }
+}
