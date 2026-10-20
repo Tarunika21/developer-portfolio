@@ -1,42 +1,31 @@
-import './Projects.css'
+import "./Projects.css";
 
 const professionalProjects = [
   {
-    title: 'Advanced Events Search',
+    title: "Advanced Events Search",
     description:
-      'High-performance enterprise financial events search application supporting 100K+ users across desktop and mobile platforms.',
+      "High-performance enterprise financial events search application supporting 100K+ users across desktop and mobile platforms.",
     achievements: [
-      'Delivered approximately 20 production features',
-      'Resolved 100+ production issues through root-cause analysis and end-to-end validation',
-      'Integrated GraphQL APIs with NgRx and RxJS state management',
-      'Maintained 90%+ unit-test coverage for developed features',
+      "Delivered approximately 20 production features",
+      "Resolved 100+ production issues through root-cause analysis and end-to-end validation",
+      "Integrated GraphQL APIs with NgRx and RxJS state management",
+      "Maintained 90%+ unit-test coverage for developed features",
     ],
-    technologies: [
-      'Angular',
-      'TypeScript',
-      'NgRx',
-      'RxJS',
-      'GraphQL',
-    ],
+    technologies: ["Angular", "TypeScript", "NgRx", "RxJS", "GraphQL"],
   },
   {
-    title: 'Private Markets Analytics Platform',
+    title: "Private Markets Analytics Platform",
     description:
-      'Enterprise financial analytics platform built using micro frontend architecture with full-stack ownership across UI, APIs and integrations.',
+      "Enterprise financial analytics platform built using micro frontend architecture with full-stack ownership across UI, APIs and integrations.",
     achievements: [
-      'Developed 5 micro frontend financial analytics widgets',
-      'Built 5+ ASP.NET Core backend/API components',
-      'Integrated GraphQL workflows between frontend and backend services',
-      'Built reusable UI modules using an enterprise design system',
+      "Developed 5 micro frontend financial analytics widgets",
+      "Built 5+ ASP.NET Core backend/API components",
+      "Integrated GraphQL workflows between frontend and backend services",
+      "Built reusable UI modules using an enterprise design system",
     ],
-    technologies: [
-      'Preact',
-      'ASP.NET Core',
-      'GraphQL',
-      'Micro Frontends',
-    ],
+    technologies: ["Preact", "ASP.NET Core", "GraphQL", "Micro Frontends"],
   },
-]
+];
 
 function Projects() {
   return (
@@ -72,17 +61,13 @@ function Projects() {
 
                 <ul>
                   {project.achievements.map((achievement) => (
-                    <li key={achievement}>
-                      {achievement}
-                    </li>
+                    <li key={achievement}>{achievement}</li>
                   ))}
                 </ul>
 
                 <div className="project-tech">
                   {project.technologies.map((technology) => (
-                    <span key={technology}>
-                      {technology}
-                    </span>
+                    <span key={technology}>{technology}</span>
                   ))}
                 </div>
               </article>
@@ -92,61 +77,49 @@ function Projects() {
 
         <div className="project-category personal-project-category">
           <div className="category-heading">
-            <span>PERSONAL PROJECT</span>
-            <p>Designed and built independently</p>
+            <span>PERSONAL PROJECTS</span>
+            <p>Independent full-stack engineering projects</p>
           </div>
 
           <article className="featured-project">
             <div className="project-content">
               <div className="project-label">
                 <span>FEATURED PROJECT</span>
-                <span className="project-status">
-                  In Development
-                </span>
+                <span className="project-status">Live on AWS</span>
               </div>
 
               <h3>AI Career Hub</h3>
 
               <p className="project-description">
-                A full-stack career management platform designed to help
-                users manage career profiles, resumes, experience,
-                education and job application workflows through a modern
-                web interface.
+                A deployed full-stack career management platform that helps
+                users manage career profiles, build resumes, organize
+                professional experience and education, and track job
+                applications through a unified dashboard.
               </p>
 
-              <div className="project-features">
-                <div>
-                  <span>01</span>
-                  <p>
-                    Secure JWT-based authentication and authorization
-                  </p>
-                </div>
-
-                <div>
-                  <span>02</span>
-                  <p>
-                    Resume and career profile management
-                  </p>
-                </div>
-
-                <div>
-                  <span>03</span>
-                  <p>
-                    REST API architecture with PostgreSQL persistence
-                  </p>
-                </div>
-
-                <div>
-                  <span>04</span>
-                  <p>
-                    Production-focused testing and cloud deployment
-                  </p>
-                </div>
-              </div>
+              <ul className="project-features-list">
+                <li>
+                  JWT-based authentication with protected application routes
+                </li>
+                <li>
+                  Career profile and resume management with experience,
+                  education and project records
+                </li>
+                <li>
+                  Job application tracking with status-based dashboard
+                  statistics
+                </li>
+                <li>
+                  AWS deployment using CloudFront, S3, Elastic Beanstalk and RDS
+                  PostgreSQL
+                </li>
+              </ul>
 
               <div className="project-tech">
                 <span>Angular</span>
+                <span>TypeScript</span>
                 <span>ASP.NET Core</span>
+                <span>.NET 10</span>
                 <span>PostgreSQL</span>
                 <span>EF Core</span>
                 <span>JWT</span>
@@ -155,17 +128,22 @@ function Projects() {
 
               <div className="project-actions">
                 <a
-                  href="https://github.com/Tarunika21"
+                  href="https://d3amqdncleql58.cloudfront.net/"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="project-button"
                 >
-                  GitHub
+                  Live Demo ↗
                 </a>
 
-                <span className="deployment-note">
-                  Live demo coming soon
-                </span>
+                <a
+                  href="https://github.com/Tarunika21/AICareerHub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-button"
+                >
+                  GitHub ↗
+                </a>
               </div>
             </div>
 
@@ -178,9 +156,7 @@ function Projects() {
                     <span></span>
                   </div>
 
-                  <div className="browser-address">
-                    AI Career Hub
-                  </div>
+                  <div className="browser-address">AI Career Hub</div>
                 </div>
 
                 <div className="preview-content">
@@ -208,10 +184,63 @@ function Projects() {
               </div>
             </div>
           </article>
+
+          <article className="professional-project-card impactgraph-card">
+            <div className="professional-project-top">
+              <span>Open Source Project</span>
+              <span>Go + Java</span>
+            </div>
+
+            <h3>ImpactGraph</h3>
+
+            <p className="professional-description">
+              A developer-focused project exploring API dependency analysis and
+              change-impact tracking across services. Built to strengthen
+              backend engineering, system design and cross-language development
+              skills.
+            </p>
+
+            <ul>
+              <li>
+                Developing a Go-based API service with structured backend
+                architecture
+              </li>
+              <li>
+                Implementing PostgreSQL-backed persistence and repository
+                patterns
+              </li>
+              <li>
+                Exploring API reference resolution and dependency analysis
+              </li>
+              <li>
+                Planned integration with a Spring Boot analyzer, Docker and
+                cloud deployment
+              </li>
+            </ul>
+
+            <div className="project-tech">
+              <span>Go</span>
+              <span>PostgreSQL</span>
+              <span>REST APIs</span>
+              <span>Spring Boot (Planned)</span>
+              <span>Docker (Planned)</span>
+            </div>
+
+            <div className="project-actions">
+              <a
+                href="https://github.com/Tarunika21/ImpactGraph"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-button"
+              >
+                GitHub ↗
+              </a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Projects
+export default Projects;
