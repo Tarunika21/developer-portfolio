@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Projects.css";
 
 const professionalProjects = [
@@ -27,7 +28,23 @@ const professionalProjects = [
   },
 ];
 
+const screenshots = [
+  { src: "/images/aicareerhub/dashboard.png", label: "Dashboard" },
+  { src: "/images/aicareerhub/jobTracker-add.png", label: "Add Application" },
+  { src: "/images/aicareerhub/jobTrcker-appManagement.png", label: "Job Tracker" },
+  { src: "/images/aicareerhub/resume.png", label: "Resume Library" },
+  { src: "/images/aicareerhub/resume-preview.png", label: "Resume Preview" },
+  { src: "/images/aicareerhub/careerProfile.png", label: "Career Profile" },
+];
+
 function Projects() {
+  const [activeScreenshot, setActiveScreenshot] = useState(0);
+  const [galleryOpen, setGalleryOpen] = useState(false);
+  const currentScreenshot = screenshots[activeScreenshot];
+  const changeScreenshot = (direction: number) => {
+    setActiveScreenshot((index) => (index + direction + screenshots.length) % screenshots.length);
+  };
+
   return (
     <section className="projects section" id="projects">
       <div className="section-container">
@@ -85,7 +102,7 @@ function Projects() {
             <div className="project-content">
               <div className="project-label">
                 <span>FEATURED PROJECT</span>
-                <span className="project-status">Live on AWS</span>
+                <span className="project-status">Previously deployed on AWS</span>
               </div>
 
               <h3>AI Career Hub</h3>
@@ -127,14 +144,13 @@ function Projects() {
               </div>
 
               <div className="project-actions">
-                <a
-                  href="https://d3amqdncleql58.cloudfront.net/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
                   className="project-button"
+                  onClick={() => setGalleryOpen(true)}
                 >
-                  Live Demo ↗
-                </a>
+                  View Screenshots ↗
+                </button>
 
                 <a
                   href="https://github.com/Tarunika21/AICareerHub"
@@ -148,40 +164,15 @@ function Projects() {
             </div>
 
             <div className="project-preview">
-              <div className="browser-window">
-                <div className="browser-bar">
-                  <div className="browser-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-
-                  <div className="browser-address">AI Career Hub</div>
-                </div>
-
-                <div className="preview-content">
-                  <div className="preview-sidebar">
-                    <strong>AI</strong>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-
-                  <div className="preview-main">
-                    <p>CAREER DASHBOARD</p>
-                    <h4>Welcome back.</h4>
-
-                    <div className="preview-cards">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                    </div>
-
-                    <div className="preview-panel"></div>
-                  </div>
-                </div>
-              </div>
+              <button
+                type="button"
+                className="project-screenshot-preview"
+                onClick={() => setGalleryOpen(true)}
+                aria-label="Open AI Career Hub screenshots"
+              >
+                <img src={screenshots[0].src} alt="AI Career Hub dashboard" loading="lazy" />
+                <span>Explore 6 application screenshots ↗</span>
+              </button>
             </div>
           </article>
 
@@ -239,6 +230,38 @@ function Projects() {
           </article>
         </div>
       </div>
+      {galleryOpen && (
+        <div className="project-gallery-overlay" role="presentation" onMouseDown={(event) => {
+          if (event.target === event.currentTarget) setGalleryOpen(false);
+        }}>
+          <div className="project-gallery-dialog" role="dialog" aria-modal="true" aria-label="AI Career Hub screenshot gallery">
+            <div className="project-gallery-header">
+              <div>
+                <strong>AI Career Hub</strong>
+                <p>{currentScreenshot.label} · {activeScreenshot + 1} of {screenshots.length}</p>
+              </div>
+              <button type="button" onClick={() => setGalleryOpen(false)} aria-label="Close gallery">✕</button>
+            </div>
+            <img className="project-gallery-image" src={currentScreenshot.src} alt={`AI Career Hub — ${currentScreenshot.label}`} />
+            <div className="project-gallery-controls">
+              <button type="button" onClick={() => changeScreenshot(-1)}>← Previous</button>
+              <div className="project-gallery-thumbnails">
+                {screenshots.map((screenshot, index) => (
+                  <button
+                    key={screenshot.src}
+                    type="button"
+                    className={index === activeScreenshot ? "active" : ""}
+                    onClick={() => setActiveScreenshot(index)}
+                    aria-label={`Show ${screenshot.label}`}
+                    aria-pressed={index === activeScreenshot}
+                  >{index + 1}</button>
+                ))}
+              </div>
+              <button type="button" onClick={() => changeScreenshot(1)}>Next →</button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
